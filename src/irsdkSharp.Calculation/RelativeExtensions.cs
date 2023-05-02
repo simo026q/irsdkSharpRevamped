@@ -1,4 +1,5 @@
 ﻿using irsdkSharp.Calculation.Models;
+using IrSdkSharp;
 using irsdkSharp.Serialization;
 using irsdkSharp.Serialization.Models.Data;
 using irsdkSharp.Serialization.Models.Session;
@@ -89,7 +90,7 @@ namespace irsdkSharp.Calculation
             return relatives;
         }
 
-        public static List<CarRelativeModel> CalculateRelatives(this IRacingSDK racingSDK)
+        public static List<CarRelativeModel> CalculateRelatives(this IracingSdk racingSDK)
         {
             var sessionModel = racingSDK.GetSerializedSessionInfo();
 

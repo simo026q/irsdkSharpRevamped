@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace irsdkSharp.Models
+namespace IrSdkSharp.Models
 {
     internal class VarBuf
     {

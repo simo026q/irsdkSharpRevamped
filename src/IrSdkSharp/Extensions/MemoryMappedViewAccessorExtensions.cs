@@ -2,7 +2,7 @@
 using System.IO.MemoryMappedFiles;
 using System.Text;
 
-namespace irsdkSharp.Extensions
+namespace IrSdkSharp.Extensions
 {
     public static class MemoryMappedViewAccessorExtensions
     {

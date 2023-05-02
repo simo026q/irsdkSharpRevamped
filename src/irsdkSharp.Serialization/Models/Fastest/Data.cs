@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
-using irsdkSharp.Enums;
-using irsdkSharp.Models;
+using IrSdkSharp;
+using IrSdkSharp.Enums;
+using IrSdkSharp.Enums;
+using IrSdkSharp.Models;
 using irsdkSharp.Serialization.Enums.Fastest;
 using irsdkSharp.Serialization.Models.Session;
 using YamlDotNet.Serialization;
@@ -16,12 +18,12 @@ namespace irsdkSharp.Serialization.Models.Fastest
     /// </summary>
     public class Data
     {
-        private readonly IRacingSDK _sdk;
+        private readonly IracingSdk _sdk;
         private readonly MemoryMappedViewAccessor _fileView;
         private readonly Dictionary<string, VarHeader> _headers;
         //private volatile int _currentSessionUpdate;
 
-        public Data(IRacingSDK sdk)
+        public Data(IracingSdk sdk)
         {
             _sdk = sdk;
             _fileView = sdk.FileMapView;

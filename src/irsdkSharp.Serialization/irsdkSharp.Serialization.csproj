@@ -2,7 +2,6 @@
   
   <PropertyGroup>
     <LangVersion>9.0</LangVersion>
-	<TargetFrameworks>net6.0</TargetFrameworks>
     <PackageId>irsdkSharp.Serialization</PackageId>
 	  <VersionPrefix>0.9.0</VersionPrefix>
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
@@ -19,6 +18,7 @@
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
     <AssemblyName>irsdkSharp.Serialization</AssemblyName>
     <RootNamespace>irsdkSharp.Serialization</RootNamespace>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -48,7 +48,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\irsdkSharp\irsdkSharp.csproj" />
+    <ProjectReference Include="..\IrSdkSharp\IrSdkSharp.csproj" />
   </ItemGroup>
 
 </Project>

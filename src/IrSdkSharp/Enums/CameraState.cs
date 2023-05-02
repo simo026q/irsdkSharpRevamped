@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace irsdkSharp.Enums
+namespace IrSdkSharp.Enums
 {
     [Flags]
     public enum CameraState

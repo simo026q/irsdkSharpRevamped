@@ -4,7 +4,7 @@ using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Text;
 
-namespace irsdkSharp.Models
+namespace IrSdkSharp.Models
 {
     public class IRacingSdkHeader
     {

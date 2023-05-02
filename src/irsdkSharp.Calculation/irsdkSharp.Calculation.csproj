@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-	<TargetFrameworks>net6.0</TargetFrameworks>
     <PackageId>irsdkSharp.Calculation</PackageId>
 	  <VersionPrefix>0.9.0</VersionPrefix>
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
@@ -19,6 +18,7 @@
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
     <AssemblyName>irsdkSharp.Calculation</AssemblyName>
     <RootNamespace>irsdkSharp.Calculation</RootNamespace>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

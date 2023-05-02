@@ -1,4 +1,4 @@
-﻿namespace irsdkSharp;
+﻿namespace IrSdkSharp;
 
 /// <summary>
 /// The default values for the iRacing SDK

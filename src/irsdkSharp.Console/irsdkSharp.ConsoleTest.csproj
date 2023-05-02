@@ -3,13 +3,13 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\irsdkSharp.Calculation\irsdkSharp.Calculation.csproj" />
     <ProjectReference Include="..\irsdkSharp.Serialization\irsdkSharp.Serialization.csproj" />
-    <ProjectReference Include="..\irsdkSharp\irsdkSharp.csproj" />
+    <ProjectReference Include="..\IrSdkSharp\IrSdkSharp.csproj" />
   </ItemGroup>
 
 </Project>

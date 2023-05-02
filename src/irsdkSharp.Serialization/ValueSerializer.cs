@@ -1,6 +1,6 @@
-﻿using irsdkSharp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using IrSdkSharp.Models;
 
 namespace irsdkSharp.Serialization
 {

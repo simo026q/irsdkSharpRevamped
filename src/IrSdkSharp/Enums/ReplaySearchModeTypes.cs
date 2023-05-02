@@ -1,4 +1,4 @@
-﻿namespace irsdkSharp.Enums
+﻿namespace IrSdkSharp.Enums
 {
     public enum ReplaySearchModeTypes 
     { 

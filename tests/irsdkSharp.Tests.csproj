@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFramework>net6.0</TargetFramework>
+	<TargetFramework>net7.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\irsdkSharp.Serialization\irsdkSharp.Serialization.csproj" />
-    <ProjectReference Include="..\src\irsdkSharp\irsdkSharp.csproj" />
+    <ProjectReference Include="..\src\IrSdkSharp\IrSdkSharp.csproj" />
   </ItemGroup>
 
   <ItemGroup>

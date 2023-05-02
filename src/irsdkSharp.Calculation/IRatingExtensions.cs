@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using IrSdkSharp;
 
 namespace irsdkSharp.Calculation
 {
@@ -147,7 +148,7 @@ namespace irsdkSharp.Calculation
             return result;
         }
 
-        public static Dictionary<int, double> CalculateIRatingGains(this IRacingSDK racingSDK)
+        public static Dictionary<int, double> CalculateIRatingGains(this IracingSdk racingSDK)
         {
             var sessionModel = racingSDK.GetSerializedSessionInfo();
 
