@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace irsdkSharp;
+namespace IrSdkSharp;
 
 /// <summary>
 /// Options for the iRacing SDK

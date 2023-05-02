@@ -1,6 +1,6 @@
-﻿using irsdkSharp.Enums;
+﻿using IrSdkSharp.Enums;
 
-namespace irsdkSharp.Models
+namespace IrSdkSharp.Models
 {
     public class VarHeader
     {

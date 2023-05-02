@@ -5,8 +5,9 @@ using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Reflection;
-using irsdkSharp.Enums;
-using irsdkSharp.Models;
+using IrSdkSharp;
+using IrSdkSharp.Enums;
+using IrSdkSharp.Models;
 using irsdkSharp.Serialization;
 using irsdkSharp.Serialization.Models.Data;
 using irsdkSharp.Serialization.Models.Session;
@@ -16,7 +17,7 @@ namespace irsdkSharp.Tests
 {
     public class Tests
     {
-        IRacingSDK sdk;
+        IracingSdk sdk;
         IRacingDataModel data;
         IRacingSessionModel session;
 
@@ -24,7 +25,7 @@ namespace irsdkSharp.Tests
         public void Setup()
         {
             var memMap = MemoryMappedFile.CreateFromFile(Path.Combine("testdata", "session.ibt"));
-            sdk = new IRacingSDK(memMap.CreateViewAccessor());
+            sdk = new IracingSdk(memMap.CreateViewAccessor());
         }
 
 

@@ -5,6 +5,7 @@ using irsdkSharp.Serialization.Models.Session;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IrSdkSharp;
 
 namespace irsdkSharp.Calculation
 {
@@ -167,7 +168,7 @@ namespace irsdkSharp.Calculation
             return results;
         }
 
-        public static List<CarGapIntervalModel> CalculateGapsAndIntervals(this IRacingSDK racingSDK)
+        public static List<CarGapIntervalModel> CalculateGapsAndIntervals(this IracingSdk racingSDK)
         {
             var sessionModel = racingSDK.GetSerializedSessionInfo();
 

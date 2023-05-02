@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.MemoryMappedFiles;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+using IrSdkSharp;
 using irsdkSharp.Serialization;
 using irsdkSharp.Serialization.Models.Data;
 using irsdkSharp.Serialization.Models.Fastest;
@@ -14,13 +15,13 @@ namespace irsdkSharp.Benchmark
     [MemoryDiagnoser]
     public class Runner
     {
-        private readonly IRacingSDK sdk;
+        private readonly IracingSdk sdk;
         private readonly IRacingDataModel _dataModel;
         private readonly Data _data;
         public Runner()
         {
             var memMap = MemoryMappedFile.CreateFromFile(Path.Combine("data", "session.ibt"));
-            sdk = new IRacingSDK(memMap.CreateViewAccessor());
+            sdk = new IracingSdk(memMap.CreateViewAccessor());
 
             _dataModel = sdk.GetSerializedData();
             _data = sdk.GetData();

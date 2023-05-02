@@ -1,4 +1,4 @@
-﻿namespace irsdkSharp
+﻿namespace IrSdkSharp
 {
     public static class Constants
     {

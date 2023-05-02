@@ -1,4 +1,4 @@
-﻿using irsdkSharp.Models;
+﻿using IrSdkSharp.Models;
 using System;
 using System.Collections.Generic;
 

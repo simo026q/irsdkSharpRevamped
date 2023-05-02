@@ -2,27 +2,27 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.IO.MemoryMappedFiles;
-using irsdkSharp.Enums;
-using irsdkSharp.Models;
+using IrSdkSharp.Enums;
+using IrSdkSharp.Models;
 using System.Threading;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
-using irsdkSharp.Extensions;
+using IrSdkSharp.Extensions;
 using System.IO;
 using System.Runtime.Versioning;
 
-namespace irsdkSharp
+namespace IrSdkSharp
 {
     /// <summary>
     /// Connects to the iRacing SDK.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public class IRacingSDK : IDisposable
+    public class IracingSdk : IDisposable
     {
         #region Fields
         private readonly Encoding _encoding;
-        private readonly ILogger<IRacingSDK>? _logger;
+        private readonly ILogger<IracingSdk>? _logger;
         
         private Dictionary<string, VarHeader>? _varHeaders;
         private bool _disposed;
@@ -41,7 +41,7 @@ namespace irsdkSharp
         /// </summary>
         /// <exception cref="ObjectDisposedException"/>
         public bool IsStarted => (_disposed) 
-            ? throw new ObjectDisposedException(nameof(IRacingSDK)) 
+            ? throw new ObjectDisposedException(nameof(IracingSdk)) 
             : _loopCancellationSource != null && !_loopCancellationSource.IsCancellationRequested;
 
         public IRacingSdkHeader? Header { get; private set; }
@@ -89,27 +89,27 @@ namespace irsdkSharp
         /// <summary>
         /// Not used anymore. Use the getter of FileMapView instead.
         /// </summary>
-        /// <param name="racingSdk">The Sdk.</param>
-        /// <returns>The FileMapView property of the <paramref name="racingSdk"/>.</returns>
+        /// <param name="iracingSdk">The Sdk.</param>
+        /// <returns>The FileMapView property of the <paramref name="iracingSdk"/>.</returns>
         [Obsolete("Use the getter of FileMapView instead.")]
-        public static MemoryMappedViewAccessor? GetFileMapView(IRacingSDK racingSdk) 
-            => racingSdk.FileMapView;
+        public static MemoryMappedViewAccessor? GetFileMapView(IracingSdk iracingSdk) 
+            => iracingSdk.FileMapView;
 
         /// <summary>
         /// Not used anymore. Use the getter of VarHeaders instead.
         /// </summary>
-        /// <param name="racingSdk">The Sdk.</param>
-        /// <returns>The VarHeaders property of the <paramref name="racingSdk"/>.</returns>
+        /// <param name="iracingSdk">The Sdk.</param>
+        /// <returns>The VarHeaders property of the <paramref name="iracingSdk"/>.</returns>
         [Obsolete("Use the getter of VarHeaders instead.")]
-        public static Dictionary<string, VarHeader>? GetVarHeaders(IRacingSDK racingSdk)
-            => racingSdk.VarHeaders;
+        public static Dictionary<string, VarHeader>? GetVarHeaders(IracingSdk iracingSdk)
+            => iracingSdk.VarHeaders;
 
         /// <summary>
         /// Creates a new instance of the SDK.
         /// </summary>
         /// <param name="options">The options used when the Sdk is started.</param>
         /// <param name="autoStart">Whether or not the Sdk should be auto started on initialization.</param>
-        public IRacingSDK(IRacingSdkOptions? options, ILogger<IRacingSDK>? logger, bool autoStart = true)
+        public IracingSdk(IRacingSdkOptions? options, ILogger<IracingSdk>? logger, bool autoStart = true)
         {
             // Register CP1252 encoding
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -127,7 +127,7 @@ namespace irsdkSharp
         /// Creates a new instance of the SDK.
         /// </summary>
         /// <param name="autoStart">Whether or not the Sdk should be auto started on initialization.</param>
-        public IRacingSDK(bool autoStart = true) : this(null, null, autoStart)
+        public IracingSdk(bool autoStart = true) : this(null, null, autoStart)
         {
         }
         
@@ -136,7 +136,7 @@ namespace irsdkSharp
         /// </summary>
         /// <param name="options">The options used when the Sdk is started.</param>
         /// <param name="autoStart">Whether or not the Sdk should be auto started on initialization.</param>
-        public IRacingSDK(IRacingSdkOptions? options, bool autoStart = true) : this(options, null, autoStart)
+        public IracingSdk(IRacingSdkOptions? options, bool autoStart = true) : this(options, null, autoStart)
         {
         }
 
@@ -144,11 +144,11 @@ namespace irsdkSharp
         /// Creates a new instance of the SDK.
         /// </summary>
         /// <param name="autoStart">Whether or not the Sdk should be auto started on initialization.</param>
-        public IRacingSDK(ILogger<IRacingSDK> logger, bool autoStart = true) : this(null, logger, autoStart)
+        public IracingSdk(ILogger<IracingSdk> logger, bool autoStart = true) : this(null, logger, autoStart)
         {
         }
 
-        public IRacingSDK(MemoryMappedViewAccessor accessor) : this(null, null, false)
+        public IracingSdk(MemoryMappedViewAccessor accessor) : this(null, null, false)
         {
             FileMapView = accessor;
 
@@ -173,7 +173,7 @@ namespace irsdkSharp
         public void Start()
         {
             if (_disposed)
-                throw new ObjectDisposedException(nameof(IRacingSDK));
+                throw new ObjectDisposedException(nameof(IracingSdk));
             
             if (IsStarted) 
                 return;
@@ -193,7 +193,7 @@ namespace irsdkSharp
         public void Stop()
         {
             if (_disposed)
-                throw new ObjectDisposedException(nameof(IRacingSDK));
+                throw new ObjectDisposedException(nameof(IracingSdk));
             
             _loopCancellationSource?.Cancel();
             _loopCancellationSource?.Dispose();
@@ -372,7 +372,7 @@ namespace irsdkSharp
         public bool IsConnected()
         {
             if (_disposed)
-                throw new ObjectDisposedException(nameof(IRacingSDK));
+                throw new ObjectDisposedException(nameof(IracingSdk));
             
             if (Header != null)
                 return (Header.Status & 1) > 0;

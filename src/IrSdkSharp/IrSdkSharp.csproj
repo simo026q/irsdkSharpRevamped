@@ -2,24 +2,28 @@
 
   <PropertyGroup>
     <LangVersion>11</LangVersion>
-	<TargetFrameworks>net6.0</TargetFrameworks>
-    <PackageId>irsdkSharp</PackageId>
+    <PackageId>irsdkSharpRevamped</PackageId>
     <VersionPrefix>0.9.0</VersionPrefix>
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Author>Andy Morrell (LuckyNoS7evin)</Author>
-    <Authors>Andy Morrell (LuckyNoS7evin)</Authors>
-    <Company>Slevinth Heaven Ltd</Company>
+    <Authors>Simon Christensen (simo026q)</Authors>
+    <Company></Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Copyright>Slevinth Heaven Ltd 2020</Copyright>
-    <PackageProjectUrl>https://github.com/SlevinthHeaven/irsdkSharp</PackageProjectUrl>
-    <Description>C# version of the iRacing SDK</Description>
+    <Copyright></Copyright>
+    <PackageProjectUrl>https://github.com/simo026q/irsdkSharpRevamped</PackageProjectUrl>
+    <Description>Revamped version of LuckyNoS7evin's irsdkSharp libary.</Description>
     <SignAssembly>true</SignAssembly>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-    <AssemblyName>irsdkSharp</AssemblyName>
-    <RootNamespace>irsdkSharp</RootNamespace>
+    <AssemblyName>IrSdkSharp</AssemblyName>
+    <RootNamespace>IrSdkSharp</RootNamespace>
     <Nullable>enable</Nullable>
+    <TargetFramework>net7.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Title>irsdkSharpRevamped</Title>
+    <RepositoryUrl>https://github.com/simo026q/irsdkSharpRevamped</RepositoryUrl>
+    <Product>irsdkSharpRevamped</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
